@@ -50,6 +50,8 @@
 &sk LEFT_SHIFT  &kp Z  &kp X         &kp C        &kp V         &kp B        &kp N            &kp M   &kp COMMA  &kp DOT  &kp FSLH       &sl 3
                               &sk LEFT_GUI  &lt 1 SPACE  &kp LEFT_ALT    &kp ENTER  &lt 2 BACKSPACE  &sk ESCAPE
             >;
+
+            label = "alpha";
         };
 
         num_layer {
@@ -65,6 +67,8 @@
 &trans           &trans  &kp TILDE  &kp GRAVE  &kp LEFT_BRACKET  &kp LEFT_BRACE    &kp RIGHT_BRACE  &kp RIGHT_BRACKET        &trans             &kp MINUS              &kp EQUAL    &trans
                                        &trans            &trans          &trans             &trans         &kp PERIOD        &trans
             >;
+
+            label = "num";
         };
 
         nav_layer {
@@ -80,6 +84,8 @@
 &trans           &none             &none         &none         &none   &none          &kp HOME   &kp PAGE_DOWN     &kp PG_UP          &kp END  &none  &none
                                                 &trans        &trans  &trans            &trans          &trans        &trans
             >;
+
+            label = "nav";
         };
 
         func {
@@ -89,6 +95,8 @@
 &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &trans         &trans         &trans             &trans           &trans  &trans
                                               &trans        &trans        &trans    &trans         &trans         &trans
             >;
+
+            label = "func";
         };
     };
 };
