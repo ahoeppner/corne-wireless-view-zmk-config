@@ -31,6 +31,11 @@
             bindings = <&kp BACKSPACE>;
             key-positions = <22 21>;
         };
+
+        combo_caps_word {
+            bindings = <&caps_word>;
+            key-positions = <24 35>;
+        };
     };
 
     keymap {
