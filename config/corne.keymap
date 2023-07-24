@@ -66,8 +66,6 @@
                 <&kp LEFT_ALT>,
                 <&kp LA(LEFT_GUI)>,
                 <&kp LA(LC(LEFT_GUI))>;
-
-            tapping-term-ms = <150>;
         };
     };
 
