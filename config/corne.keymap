@@ -18,26 +18,16 @@
             bindings = <&kp ESC>;
         };
 
-        combo_del {
-            bindings = <&kp DELETE>;
-            key-positions = <10 11>;
-        };
-
-        combo_enter {
-            bindings = <&mo 3>;
+        combo_layer_func {
+            bindings = <&sl 3>;
             key-positions = <37 40>;
-        };
-
-        combo_bksp {
-            bindings = <&kp BACKSPACE>;
-            key-positions = <21 22>;
         };
     };
 
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
+        base {
             // -----------------------------------------------------------------------------------------
             // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
             // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
@@ -50,6 +40,8 @@
 &sk LEFT_SHIFT  &kp Z  &kp X  &kp C         &kp V  &kp B        &kp N                  &kp M  &kp COMMA      &kp DOT  &kp FSLH  &mt RIGHT_SHIFT RETURN
                               &sk LEFT_GUI  &sl 1  &kp SPACE    &mt RIGHT_SHIFT SPACE  &sl 2  &sk RIGHT_ALT
             >;
+
+            label = "Base";
         };
 
         lower_layer {
@@ -61,10 +53,12 @@
 
             bindings = <
 &kp GRAVE  &kp EXCLAMATION  &kp AT  &kp POUND  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPERSAND      &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans
-&trans     &kp F1           &kp F2  &kp F3     &kp F4    &kp F5       &kp F6     &kp MINUS          &kp EQUAL     &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp BSPC
+&trans     &kp F1           &kp F2  &kp F3     &kp F4    &kp F5       &kp F6     &kp MINUS          &kp EQUAL     &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp BACKSLASH
 &trans     &kp F7           &kp F8  &kp F9     &kp F10   &kp F11      &kp F12    &kp RIGHT_BRACKET  &none         &trans                &trans                 &trans
                                     &trans     &to 1     &trans       &trans     &trans             &trans
             >;
+
+            label = "Lower";
         };
 
         raise_layer {
@@ -75,20 +69,24 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB  &kp N1  &kp N2  &kp N3  &kp N4   &kp N5     &kp N6   &kp N7          &kp N8          &kp N9        &kp N0           &kp BSPC
-&trans   &kp F1  &kp F2  &kp F3  &kp F4   &kp F5     &kp F6   &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &kp BACKSLASH
-&trans   &kp F7  &kp F8  &kp F9  &kp F10  &kp F11    &kp F12  &none           &kp COMMA       &kp PERIOD    &kp SLASH        &none
-                         &trans  &trans   &trans     &trans   &to 2           &trans
+&kp GRAVE  &kp N1  &kp N2  &kp N3  &kp N4   &kp N5     &kp N6   &kp N7          &kp N8          &kp N9        &kp N0           &kp DELETE
+&trans     &kp F1  &kp F2  &kp F3  &kp F4   &kp F5     &kp F6   &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &kp BACKSLASH
+&trans     &kp F7  &kp F8  &kp F9  &kp F10  &kp F11    &kp F12  &none           &kp COMMA       &kp PERIOD    &kp SLASH        &none
+                           &trans  &trans   &trans     &trans   &to 2           &trans
             >;
+
+            label = "Raise";
         };
 
         func {
             bindings = <
-&bt BT_CLR  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
-&bt BT_PRV  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
-&bt BT_NXT  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
+&bt BT_CLR  &none  &none  &none  &none  &none    &none  &none  &none  &none           &none            &none
+&bt BT_PRV  &none  &none  &none  &none  &none    &none  &none  &none  &kp LEFT_BRACE  &kp RIGHT_BRACE  &none
+&bt BT_NXT  &none  &none  &none  &none  &none    &none  &none  &none  &none           &none            &none
                           &none  &none  &none    &none  &none  &none
             >;
+
+            label = "Func";
         };
     };
 };
